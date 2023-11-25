@@ -1,0 +1,108 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="mer">
+    <input type="text" disabled id="res" style="width: 400;height: 80px; ">
+    <table>
+        <div id="erm">
+        <tr>
+            <td><input type="button" value="1" onclick="R(1)"></td>
+            <td><input type="button" value="2" onclick="R(2)"></td>
+            <td><input type="button" value="3" onclick="R(3)"></td>
+            <td><input type="button" value="/" onclick="R('/')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="R(4)"></td>
+            <td><input type="button" value="5" onclick="R(5)"></td>
+            <td><input type="button" value="6" onclick="R(6)"></td>
+            <td><input type="button" value="-" onclick="R('-')"></td>
+        </tr>
+        <tr><td><input type="button" value="7" onclick="R(7)"></td>
+            <td><input type="button" value="8" onclick="R(8)"></td>
+            <td><input type="button" value="9" onclick="R(9)"></td>
+            <td><input type="button" value="+" onclick="R('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="c" onclick="G()" id="bi"></td>
+            <td><input type="button" value="0" onclick="R(0)"></td>
+            <td><input type="button" value="=" onclick="k('=')" id="ib"></td>
+            <td><input type="button" value="*" onclick="R('*')"></td>
+        </tr>
+        </div>
+    </table>
+    </div>
+</body>
+</html>
+<style>
+    body{
+        background-color: white;
+    }
+    #mer{
+        font-size: 40rem;
+        height: 100%;
+
+        width: 100%;
+        background-color: white;
+        display: flex; flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    td
+    {
+        background-color: black;
+        border-radius: 5px;
+        
+    }
+    table{
+        border-radius: 10px;
+        border: 15px solid black;
+        height: 400px;
+        width: 400px;
+    }
+    input[type=button]{
+        background-color: gold;
+        font-size: 2rem;
+        width: 100%;
+        height: 100%;
+    }
+    input[type=button]:hover{
+ color: white;
+ background-color: black;
+        transition:1s cubic-bezier(2,1.5,);
+    }
+    input[type=text]{
+        font-size: 3rem;
+    }
+    #ib{
+        background-color: greenyellow;
+    }
+    #bi{
+        background-color: red;
+    }
+
+
+</style>
+<script>
+    function R(a){
+        document.getElementById("res").value+=a;
+    }
+    function G(){
+
+        document.getElementById("res").value="";
+    }
+    function k()
+    {
+    var ans = eval(document.getElementById("res").value)
+    document.getElementById("res").value=ans
+    
+    
+    }
+
+
+
+</script>
